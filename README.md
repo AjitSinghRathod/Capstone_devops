@@ -204,7 +204,7 @@ type ResumeOptionsModel=
 ### Running The Backend 
 - Git clone the backend respository into folder called backend
 ```bash
-  git clone https://github.com/SaiGovardhana/ResumeBuilderBackend.git backend
+  git clone https://github.com/AjitSinghRathod/Capstone_devops.git
 ```
 - Move into the directory
 ```bash
@@ -251,7 +251,7 @@ FRONT_END="URL FOR FRONTEND"
 ### Running The Frontend
 - Git clone the frontend respository into folder called frontend
 ```bash
-  git clone https://github.com/SaiGovardhana/ResumeBuilderBackend.git backend
+  git clone https://github.com/AjitSinghRathod/Capstone_devops.git
 ```
 - Move into the directory
 ```bash
