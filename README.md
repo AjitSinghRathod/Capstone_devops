@@ -319,6 +319,17 @@ nohup angular-http-server  -p 80 --config proxy.js &
 ```
 
 ### You have now succesfully deployed the application
-### Got to your browser and navigate to localhost
+### Go to your browser and navigate to localhost
+
+
+## if you want the Application run on Docker Env.
+
+- edit the App_deploy.sh and Set Mongodb url and secret key
+- Run App_deploy.sh file for Building the Images and Deploying the Application.
+
+
+
+
+
 
 
