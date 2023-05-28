@@ -333,8 +333,80 @@ sh app_deploy.sh
 ```
 
 
+####################################################################################
+
+# If You want to Deploy Application on AWS EC2 CICD then Please Follow the Below Steps:-
+
+####################################################################################
+
+### 01) Create two Instance one for Jenkins and one for Application
+![ec2_instances](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/77c899c0-5411-4c85-8fc4-290ced8baf3d)
 
 
+### 02) Run the Below Command to install jenkins on EC2 Machine 
+```bash   
+sudo yum update -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+sudo yum install java-openjdk11 -y
+sudo dnf install java-11-amazon-corretto -y
+sudo yum install jenkins -y
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo yum install git -y
+sudo systemctl status jenkins
+```
+### Run the Below commands to Initial Required to some packages on Application EC2 Machine-
+```bash
+sudo yum update -y
+sudo yum install java -y
+sudo yum install git -y
+sudo yum install docker -y
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -a -G docker $USER
+sudo reboot
+```
+
+#### copy Public IP and use the 8080 Port to browse the Jenkins and Provide the adminInitialPassword
+
+![jenkins1](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/eb066bb8-7be5-45d8-8c9b-d8c77acafcf2)
+
+#### Kindly follow the Link - https://www.jenkins.io/doc/book/installing/linux/ for installation and Post installations Steps
+
+Create Free style project and configured github url as above mentioned 
+![jenkins4](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/5578ccae-48a7-4839-9cea-a8b57bb38f1d)
 
 
+Execute the shell command as below configured
+```bash
+pwd
+
+
+export JWTKEY="JWTKEY provide here"
+export MONGODB_URL="mongodb url"
+sed -i 's#\(mongourl=\).*#\1"$MONGODB_URL"#tg' app-deploy.sh
+sed -i 's#\(jwtkey=\).*#\1"$JWTKEY"#g' app-deploy.sh
+
+sh app-deploy.sh
+
+```
+#### above script enough for Application up and Running
+
+![app1](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/1582dd66-75d6-45b8-a578-f12d4f720263)
+
+### 03) Now we can generate the token in jenkins user for git webhook as images shown-
+![jenkins5](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/8eadee36-bf64-4d6b-885e-6cd56690e545)
+
+#### configure webhook for trigger the build from the Project Setting on Github as Image shown-
+![jenkins6](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/26feccda-6bba-4aaf-9911-ed48bfd7f07a)
+
+
+we can see the success message after webhook configured 
+
+![git1](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/4a4048c7-996d-423e-a48f-b1d4e6ae13e1)
+
+### when we push the git pushed from the developer the git trigger the build through webhook and Application Deployed Again and again
 
