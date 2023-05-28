@@ -208,7 +208,7 @@ type ResumeOptionsModel=
 ```
 - Move into the directory
 ```bash
-  cd  backend
+  cd  ResumeBuilderBackend
 ```
 - Install npm dependencies 
 ```bash
@@ -255,7 +255,7 @@ FRONT_END="URL FOR FRONTEND"
 ```
 - Move into the directory
 ```bash
-  cd  frontend
+  cd  ResumeBuilderAngular
 ```
 - Install npm dependencies 
 ```bash
@@ -326,8 +326,11 @@ nohup angular-http-server  -p 80 --config proxy.js &
 
 ## if you want the Application run on Docker Env.
 
-- edit the App_deploy.sh and Set Mongodb url and secret key
-- Run App_deploy.sh file for Building the Images and Deploying the Application.
+- edit the app_deploy.sh and Set Mongodb url and secret key
+- Run app_deploy.sh file for Building the Images and Deploying the Application.
+```bash
+sh app_deploy.sh 
+```
 
 
 
