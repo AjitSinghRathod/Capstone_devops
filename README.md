@@ -331,6 +331,10 @@ nohup angular-http-server  -p 80 --config proxy.js &
 ```bash
 sh app_deploy.sh 
 ```
+# AWS CI/CD Application Architecture
+
+
+![Capstone_Devops_4 drawio](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/53ff4c33-c2c0-412d-a0d1-21e5a9c07e39)
 
 
 ####################################################################################
