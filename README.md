@@ -376,11 +376,15 @@ sudo reboot
 
 #### Kindly follow the Link - https://www.jenkins.io/doc/book/installing/linux/ for installation and Post installations Steps
 
-Create Free style project and configured github url as above mentioned 
+#### Create Free style project and configured github url as previous mentioned 
+
+
 ![jenkins4](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/5578ccae-48a7-4839-9cea-a8b57bb38f1d)
 
 
-Execute the shell command as below configured
+### Go to the Manage Jenkins and then Click on manage Node and Cloud ->  Add agent in Jenkins node with provide Creds Public IP and ec2 User and ssh key
+
+Execute the shell command as below provided
 ```bash
 pwd
 
@@ -409,4 +413,22 @@ we can see the success message after webhook configured
 ![git1](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/4a4048c7-996d-423e-a48f-b1d4e6ae13e1)
 
 ### when we push the git pushed from the developer the git trigger the build through webhook and Application Deployed Again and again
+ 
+## I take Refenence for SNS and Cloud Watch and Lambda Fucntion to Trigger the Email when Capture Error logs
+link -> https://aws.amazon.com/blogs/mt/get-notified-specific-lambda-function-error-patterns-using-cloudwatch/
+
+## SNS Topic -
+
+![Screenshot from 2023-05-28 18-13-02](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/bbb1f014-b1b2-4b8f-8895-be88430b5cdf)
+
+
+## Subcription ->
+
+![Screenshot from 2023-05-28 18-17-19](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/82aad4f3-2566-4919-b252-3e3769871f90)
+
+
+## Lambda Function and trigger ->
+
+![Screenshot from 2023-05-28 19-14-40](https://github.com/AjitSinghRathod/Capstone_devops/assets/46068162/bcb4f6df-62e5-4ddf-a7bf-613b42f54e02)
+
 
